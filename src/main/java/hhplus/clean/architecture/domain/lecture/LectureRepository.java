@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface LectureRepository {
 
-    List<Lecture> findAllLecturesAvailable(int maxCount, LocalDateTime from, LocalDateTime end);
+    List<Lecture> findAllLecturesAvailable(int maxCount, LocalDateTime start, LocalDateTime to);
 
     List<Lecture> findAllByIds(List<Long> ids);
 

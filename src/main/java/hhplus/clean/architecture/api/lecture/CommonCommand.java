@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class CommonCommand {
-    public class LecturCommand {
+    public static class LectureCommand {
         public record Search(LocalDate date) {
             // 날짜의 시작 시간 (00:00:00)
             public LocalDateTime toStartOfDay() {
@@ -19,7 +19,7 @@ public class CommonCommand {
         }
     }
 
-    public class LectureRegistrationCommand {
+    public static class LectureRegistrationCommand {
         public record Search(long studentId) {
 
         }

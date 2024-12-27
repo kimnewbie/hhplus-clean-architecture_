@@ -24,6 +24,7 @@ public record Lecture(
         return LIMIT_STUDENT - applicantCnt;
     }
 
+    // 신청 가능한지 확인
     public void isAvailableLecture(LocalDateTime date) {
         if (lectureDate.isBefore(date)) {
             throw new IllegalStateException("날짜를 입력해주세요");
@@ -33,6 +34,7 @@ public record Lecture(
         }
     }
 
+    // 신청자수 추가
     public Lecture addApplicant() {
         return new Lecture(id, title, instructor, lectureDate, applicantCnt + 1);
     }

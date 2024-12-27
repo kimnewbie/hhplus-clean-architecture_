@@ -48,7 +48,7 @@ public class LectureRegistrationService {
         lecture.isAvailableLecture(LocalDateTime.now());
 
         // 신청 테이블 inset
-        registrationRepository.insert(command.lectureId(), command.studentId());
+        registrationRepository.insertOne(command.lectureId(), command.studentId());
 
         // 신청자수 update
         Lecture updatedLecture = lecture.addApplicant();

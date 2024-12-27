@@ -18,7 +18,7 @@ public class LectureRegistrationRepositoryImpl implements LectureRegistrationRep
     }
 
     @Override
-    public void insert(long lectureId, long studentId) {
+    public void insertOne(long lectureId, long studentId) {
         LectureRegistrationEntity entity = LectureRegistrationEntity.builder()
                 .lectureId(lectureId)
                 .studentId(studentId)
