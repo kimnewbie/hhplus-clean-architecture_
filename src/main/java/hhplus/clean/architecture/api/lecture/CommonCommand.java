@@ -6,6 +6,11 @@ import java.time.LocalTime;
 
 public class CommonCommand {
     public static class LectureCommand {
+        /**
+         * 특정 날짜를 기준으로 강의를 검색
+         *
+         * @param date
+         */
         public record Search(LocalDate date) {
             // 날짜의 시작 시간 (00:00:00)
             public LocalDateTime toStartOfDay() {
@@ -19,6 +24,9 @@ public class CommonCommand {
         }
     }
 
+    /**
+     * 특강 등록 및 학생과 관련된 명령
+     */
     public static class LectureRegistrationCommand {
         public record Search(long studentId) {
 
