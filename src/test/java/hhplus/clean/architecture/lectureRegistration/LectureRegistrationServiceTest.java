@@ -57,4 +57,23 @@ public class LectureRegistrationServiceTest {
 
         assertEquals("수강인원이 초과되었습니다.", exception.getMessage());
     }
+
+
+    @Test
+    @DisplayName("Step4")
+    void 학생이_특강을_중복신청_한번만성공() {
+        // given
+        long lectureId = 1L;
+        long studentId = 1L;
+
+        // when
+        when(registrationRepository.countLectureRegistration(lectureId, studentId)).thenReturn(1);
+
+        // 검증
+        IllegalStateException exception = assertThrows(
+                IllegalStateException.class, () -> lectureRegistrationService.regist(
+                        new CommonCommand.LectureRegistrationCommand.Regist(lectureId, studentId)));
+
+        assertEquals("이미 신청한 특강입니다.", exception.getMessage()); // 메시지 검증
+    }
 }
