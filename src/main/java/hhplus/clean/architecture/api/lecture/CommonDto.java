@@ -10,6 +10,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class CommonDto {
+    /**
+     * 강의 등록 관련 Dto
+     */
     public static class LectureRegistDto {
         public record Request(
                 long lectureId,
@@ -35,6 +38,9 @@ public class CommonDto {
 
     }
 
+    /**
+     * 학생의 강의 목록 조회 관련 Dto
+     */
     public static class LectureRegisteredDto {
 
         public record Request(
@@ -59,6 +65,9 @@ public class CommonDto {
         }
     }
 
+    /**
+     * 강의 검색 관련 Dto
+     */
     public static class LectureSearchDto {
         public record Request(LocalDate date) {
 
